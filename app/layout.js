@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Website Improvement Analyzer',
-  description: 'Audit a website and get practical SEO, accessibility, performance, content and security improvements.'
+  title: 'AI Website Growth & Intelligence Platform',
+  description: 'Audit, diagnose, and improve websites with SEO, content, lead generation, performance, security, and technical insights.'
 };
 
 export default function RootLayout({ children }) {
