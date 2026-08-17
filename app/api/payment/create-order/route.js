@@ -1,4 +1,4 @@
-import { createRazorpayOrder, getRazorpayKeyId } from '../../../../../../lib/razorpay';
+import { createRazorpayOrder, getRazorpayKeyId } from '../../../../lib/razorpay';
 
 const PLANS = {
   professional: { name: 'Professional Website Growth Report', amount: 49900 },
@@ -22,15 +22,7 @@ export async function POST(request) {
       notes: { plan, website: hostname },
     });
 
-    return Response.json({
-      keyId: getRazorpayKeyId(),
-      orderId: order.id,
-      amount: order.amount,
-      currency: order.currency,
-      plan,
-      name: selected.name,
-      website: hostname,
-    });
+    return Response.json({ keyId: getRazorpayKeyId(), orderId: order.id, amount: order.amount, currency: order.currency, plan, name: selected.name, website: hostname });
   } catch (error) {
     return Response.json({ error: error.message }, { status: 500 });
   }
